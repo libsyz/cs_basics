@@ -7,11 +7,13 @@ def quick_sort(arr)
   # split the array into right and left
   left = []
   right = []
+
   arr.each_with_index do |el, idx|
     # pivot is the last number so we don't want to capture it
     next if idx == arr.length - 1
     el < pivot ? left.push(el) : right.push(el)
   end
+
   # call quicksort on left and right
   sorted_left = quick_sort(left)
   sorted_right = quick_sort(right)
